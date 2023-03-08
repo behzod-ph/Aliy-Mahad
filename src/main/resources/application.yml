@@ -1,0 +1,93 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/db_aliymahad
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      file-size-threshold: 2KB
+logging:
+  file:
+    path: ./logs
+    name: ./logs/moti.log
+
+
+
+
+jwt:
+  secret:
+    key: 1a0a2b98-abc2-4d30-ab52-bac25590518a
+  expiry:
+    date: 36000000000000
+
+file:
+  upload-dir: ./images
+
+sms:
+  api:
+    email: motipanasiankitchen@gmail.com
+    password: nxlSLjUAQye2TRtmahabfRYqbOEWiTG2QDlX3LdI
+    url: https://notify.eskiz.uz/api/
+    limit-sms-code: 5
+    limit-sms-code-duration-hour: 1
+
+payme:
+  url: https://checkout.paycom.uz/
+  merchantId: 63493ea6cef7c50fdbde1d47
+
+click:
+  serviceId: 25150
+  merchantId: 17345
+  secretKey: T74VOV0h8b
+  merchantUserId: 28351
+
+
+
+bot:
+  log:
+    token: 1648767137:AAGs2eqaXjhJ1eFmw6dUF7CHFLFbBc4W1vM
+    username: https://t.me/Diamond001bot
+    admin: 1142292943
+
+  order:
+    token: 5317070507:AAHX_doeHmcUBNs5WReql_ZAaYOIXriF0qY
+    username: https://t.me/sdfghiuyvbnbot
+    groupId: -1001849762689
+
+
+
+firebase:
+  bucket:
+    name: moti-panasian-kitchen.appspot.com
+  image:
+    url: https://firebasestorage.googleapis.com/v0/b/${firebase.bucket.name}/o/%s?alt=media
+  project:
+    id: moti-panasian-kitchen
+
+api:
+  info:
+    title: AliyMahad
+    description: This is online collection management web-site. You can collect and save anything you want!
+    version: 1.0
+    termOfService: https://github.com/exe-11/collect_in.git
+    contact-name: CollectIn team
+    contact-email: https://github.com/exe-11/collect_in.git
+    contact-url: https://github.com/exe-11/collect_in.git
+    license-name: Apache 2.0
+    license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+springfox:
+  documentation:
+    swagger-ui:
+      base-url: /api/v0.0.1
+    swagger.v2.path: /api/v0.0.1/doc/v1
